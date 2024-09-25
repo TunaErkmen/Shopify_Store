@@ -6,17 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="{{ page_description | escape }}">
     <link rel="canonical" href="{{ canonical_url }}">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Shopify or custom plugins might use this hook -->
     {{ content_for_header }}
-    <!-- Header hook for plugins -->
+
+    <!-- Stylesheets -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
-    {{ 'application.js' | asset_url | script_tag }}
+
+    <!-- JavaScript -->
+    <script src="{{ 'application.js' | asset_url }}" defer></script>
   </head>
-  <body >
+  <body>
+    <!-- Header section -->
     {% section 'header' %}
 
+    <!-- Main content area -->
     <main role="main">
-    Hello World
+      Hello World
       {{ content_for_layout }}
     </main>
   </body>
