@@ -13,9 +13,11 @@
 
     <!-- Stylesheets -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
-
+   
     <!-- JavaScript -->
     <script src="{{ 'application.js' | asset_url }}" defer></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+   
   </head>
   <body>
     <!-- Header section -->
@@ -23,7 +25,7 @@
 
     <!-- Main content area -->
     <main role="main">
-      Hello World
+    
       {{ content_for_layout }}
     </main>
   </body>
